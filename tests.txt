@@ -1,0 +1,71 @@
+x canary test
+
+Uppercase converter tests:
+x abc to ABC
+x ABC to ABC
+x aBc to ABC
+x a1Z to A1Z
+x blank to blank
+
+Lowercase converter tests:
+x ABC to abc
+x abc to abc
+x aBc to abc
+x A1Z to a1Z
+x blank to blank
+
+Multiplier converter tests:
+x a to aa
+x 1 to 11
+x a2 to aa22
+x 1Aj2 to 11AAjj22
+x blank to blank
+
+Lower k converter tests:
+x k to blank
+x a to a
+x ak to a
+x A1K2k to A1K2
+x blank to blank
+
+Lower z converter tests:
+x z to blank
+x a to a
+x az to a
+x A1K2z to A1K2
+x blank to blank
+
+Upper Z converter tests:
+x Z to blank
+x z to z
+x aZ to a
+x A1Z2z to A12z
+x blank to blank
+
+Letter block converter tests:
+x blocking no letter turns aBc to aBc
+x blocking letter B turns aBc to ac
+x blocking letter a turns aBc to Bc
+x blocking letter z turns aBc to aBc
+x blocking letter 'gh' returns an exception
+
+tests for the block processor
+input   output   blocks
+x aBc     aBc      no blocks
+x aBc     ABC      uppercase converter
+x aBc     abc      lowercase converter
+x aBc     AABBCC   uppercase multiplier
+x aBc     aabbcc   uppercase multiplier lowercase
+
+tests for getAllBlocks
+x getAllBlocks returns a non-empty set
+x getAllBlocks returns a set that includes the uppercase converter
+x getAllBlocks returns a set that includes the multiplier converter
+
+tests for get converters
+x empty list returns empty list 
+x list with 'uppercase_z_converter' returns list with uppercase_z_converter function
+x list with 'uppercase_converter' returns list with uppercase_converter function
+x list with 'uppercase_converter' and 'uppercase_z_converter' returns list without lowercase_converter
+x list with 'uppercase_converter' and 'uppercase_z_converter' returns list equal to list with 'uppercase_converter' and 'uppercase_z_converter' functions in them
+
